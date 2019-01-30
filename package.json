@@ -1,6 +1,6 @@
 {
   "name": "preact-material-autocompleter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A material-design autocompleter with dropdown",
   "main": "index.js",
   "scripts": {

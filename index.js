@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import style from './style.css';
+import './style.css';
 import TextField from 'preact-material-components/TextField';
 import 'preact-material-components/TextField/style.css';
 
@@ -107,7 +107,7 @@ export default class AutoCompleter extends Component {
 		this.setState({allItems: allItems.concat(this.state.currentInput)});
 	};
 
-	render({ items, classNames, allowAddNewItems = false, hintText = undefined, id = undefined, onChange = undefined }, state, context) {
+	render({ items, className, allowAddNewItems = false, hintText = undefined, id = undefined, onChange = undefined }) {
 		this.state.allItems = items;
 		this.state.onChange = onChange;
 
@@ -115,18 +115,18 @@ export default class AutoCompleter extends Component {
 		if (this.state.relevantItems.length > 0)
 			suggestions = this.state.relevantItems.map(i => this._createItem(i));
 		else if (allowAddNewItems)
-			suggestions = <div onClick={this.addNewCategory}><strong>No such category, click here to add it.</strong></div>;
+			suggestions = <div onClick={this.addNewCategory}><strong>No such item, click here to add it.</strong></div>;
 		else
 			suggestions = <div><strong>No item matches your search.</strong></div>;
 
 		return (
-			<div className={classNames}>
-				<div className={style.autocomplete}>
-					<TextField className={style.wideInputField} id={id} label={hintText}
+			<div className={className}>
+				<div className="autocomplete">
+					<TextField id={id} label={hintText}
 							   onInput={this._onInput}
 							   onfocusin={this.start} value={this.state.currentInput} onfocusout={e => this.abort()}
 					/>
-					<div className={[style['autocomplete-items'], this.state.autocompleting ? style.active : ''].join(' ')} >
+					<div className={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')} >
 						{suggestions}
 					</div>
 				</div>
