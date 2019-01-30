@@ -20,7 +20,7 @@ You can also find this as an npm package [here](https://www.npmjs.com/package/pr
 ### Example 1
 Render the autocompleter with three items; 'one', 'two' and 'three' and without the possibility to add options.
 
-![autocompleter without 'allowAddNewItems' option enabled][example-no-add.png]
+![autocompleter without 'allowAddNewItems' option enabled](https://github.com/TobiasMorell/preact-material-autocompleter/blob/master/example-no-add.png)
 
 ```javascript
 import AutoCompleter from 'preact-material-autocompleter';
@@ -42,7 +42,7 @@ export default class App extends Component {
 ### Example 2
 Render the autocompleter with three items; 'one', 'two' and 'three' and allow users to add items.
 
-![autocompleter with 'allowAddNewItems' option enabled][example-with-add.png]
+![autocompleter with 'allowAddNewItems' option enabled](https://github.com/TobiasMorell/preact-material-autocompleter/blob/master/example-with-add.png)
 
 ```javascript
 import AutoCompleter from 'preact-material-autocompleter';
