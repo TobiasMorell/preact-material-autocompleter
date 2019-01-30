@@ -3,6 +3,8 @@ A material-design autocompleter with a dropdown. Simple to set up and use along 
 
 You can also find this as an npm package [here](https://www.npmjs.com/package/preact-material-autocompleter).
 
+*DISCLAIMER*: The package is currently broken, as css classes for some reason is removed from the jsx when installing through npm. I'm working on this issue, but feel free to open an issue and come with suggestions if you have an idea.
+
 ## Options
 | Option | Description | Required |
 | ------ | ----------- | -------- |
