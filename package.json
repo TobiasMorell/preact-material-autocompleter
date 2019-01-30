@@ -1,0 +1,29 @@
+{
+  "name": "preact-material-autocompleter",
+  "version": "1.0.0",
+  "description": "A material-design autocompleter with dropdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiasMorell/preact-material-autocompleter.git"
+  },
+  "keywords": [
+    "preact",
+    "material",
+    "autocomplete",
+    "dropdown"
+  ],
+  "author": "Tobias Morell",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/TobiasMorell/preact-material-autocompleter/issues"
+  },
+  "homepage": "https://github.com/TobiasMorell/preact-material-autocompleter#readme",
+  "dependencies": {
+    "preact": "^8.4.2",
+    "preact-material-components": "^1.5.5"
+  }
+}
