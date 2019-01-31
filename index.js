@@ -7,7 +7,7 @@ import 'preact-material-components/TextField/style.css';
  * Material design autocompleter. Opens up a dropdown when the TextField is selected, where the user may select one of
  * the items in a collection.
  */
-export default class AutoCompleter extends Component {
+export default class Index extends Component {
 	state = {
 		autocompleting: false,
 		currentInput: '',
@@ -104,10 +104,7 @@ export default class AutoCompleter extends Component {
 	};
 
 	addNewCategory = e => {
-		let items = this.state.allItems.concat(this.state.currentInput);
-		console.log(items);
-
-		this.setState({ allItems: items });
+		this.state.allItems.push(this.state.currentInput);
 		this._stop();
 	};
 
