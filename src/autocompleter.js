@@ -133,7 +133,7 @@ export default class AutoCompleter extends Component {
 							   onfocusin={this.start} value={this.state.currentInput} onfocusout={e => this.abort()}
 					/>
 					<div className={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')}
-						class={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')} >
+						 class={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')} >
 						{suggestions}
 					</div>
 				</div>
