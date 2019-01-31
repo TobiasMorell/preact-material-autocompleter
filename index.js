@@ -89,6 +89,7 @@ export default class AutoCompleter extends Component {
 	 */
 	_onInput = (e) => {
 		let newVal = e.target.value;
+		console.log(this.state.allItems);
 
 		let matches;
 		if (this.state.allItems) {
@@ -103,12 +104,17 @@ export default class AutoCompleter extends Component {
 	};
 
 	addNewCategory = e => {
+		let items = this.state.allItems.concat(this.state.currentInput);
+		console.log(items);
+
+		this.setState({ allItems: items });
 		this._stop();
-		this.setState({allItems: allItems.concat(this.state.currentInput)});
 	};
 
 	render({ items, className, allowAddNewItems = false, hintText = undefined, id = undefined, onChange = undefined }) {
-		this.state.allItems = items;
+		if(!this.state.allItems)
+			this.state.allItems = items;
+
 		this.state.onChange = onChange;
 
 		let suggestions;
@@ -120,13 +126,14 @@ export default class AutoCompleter extends Component {
 			suggestions = <div><strong>No item matches your search.</strong></div>;
 
 		return (
-			<div className={className}>
-				<div className="autocomplete">
+			<div className={className} class={className}>
+				<div className="autocomplete" class="autocomplete">
 					<TextField id={id} label={hintText}
 							   onInput={this._onInput}
 							   onfocusin={this.start} value={this.state.currentInput} onfocusout={e => this.abort()}
 					/>
-					<div className={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')} >
+					<div className={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')}
+						class={['autocomplete-items', this.state.autocompleting ? 'active' : ''].join(' ')} >
 						{suggestions}
 					</div>
 				</div>

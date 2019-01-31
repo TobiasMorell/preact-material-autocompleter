@@ -19,6 +19,12 @@
     left: 0;
     right: 0;
     display: none;
+
+
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: auto;
+    border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items.active {
     display: block;
