@@ -109,9 +109,7 @@ export default class Index extends Component {
 	};
 
 	render({ items, className, allowAddNewItems = false, hintText = undefined, id = undefined, onChange = undefined }) {
-		if(!this.state.allItems)
-			this.state.allItems = items;
-
+		this.state.allItems = items;
 		this.state.onChange = onChange;
 
 		let suggestions;
