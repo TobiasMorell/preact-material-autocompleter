@@ -108,9 +108,17 @@ export default class Index extends Component {
 		this._stop();
 	};
 
+	/**
+	 * Focus the underlying input field, causing the autocompleter to expand the suggestion box.
+	 */
+	focus = () => {
+		document.getElementById(this._id).focus();
+	};
+
 	render({ items, className, allowAddNewItems = false, hintText = undefined, id = undefined, onChange = undefined }) {
 		this.state.allItems = items;
 		this.state.onChange = onChange;
+		this._id = id ? id : 'preact-material-autocompleter-id';
 
 		let suggestions;
 		if (this.state.relevantItems.length > 0)
@@ -123,7 +131,7 @@ export default class Index extends Component {
 		return (
 			<div className={className} class={className}>
 				<div className="autocomplete" class="autocomplete">
-					<TextField id={id} label={hintText}
+					<TextField id={this._id} label={hintText}
 							   onInput={this._onInput}
 							   onfocusin={this.start} value={this.state.currentInput} onfocusout={e => this.abort()}
 					/>
